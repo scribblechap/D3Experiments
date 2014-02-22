@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <style type="text/css">
+
+
+div.bar {
+    display: inline-block;
+    width: 20px;
+    margin-right: 2px;
+
+}
+</style>
+    </head>
+    <body>
+
+
+        <script type="text/javascript">
+
+
+
+         var dataset = [];                        //Initialize empty array
+for (var i = 0; i < 25; i++) {           //Loop 25 times
+    var newNumber = Math.random() * 30;  //New random number (0-30)
+    dataset.push(newNumber);             //Add new number to array
+}
+
+
+            d3.select("body").selectAll("div")
+            .data(dataset)
+
+            .enter()
+            .append("div")
+            .attr("class", "bar")
+            .style("background-color", function(d) {if (d > 20) {return "red";} else {return "black";}}).style("height", function(d) {return d * 10 + "px";});
+
+
+
+              </script>
+
+    </body> 
+
+
+</html>
+
+
+
+
+
